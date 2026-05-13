@@ -52,6 +52,7 @@ export const locationsDict: Record<Location, { label: string }> = {
 
 export const careers = [
   "MULTIMEDIA_ENGINEERING",
+  "SYSTEMS_ENGINEERING",
   "MARKETING",
   "SOCIAL_WORK",
   "SOCIAL_INTERVENTION_SPECIALIZATION",
@@ -64,6 +65,9 @@ export type Career = (typeof careers)[number];
 export const careersDict: Record<Career, { label: string }> = {
   MULTIMEDIA_ENGINEERING: {
     label: "Ingeniería Multimedia",
+  },
+  SYSTEMS_ENGINEERING: {
+    label: "Ingeniería de Sistemas",
   },
   MARKETING: {
     label: "Marketing",
