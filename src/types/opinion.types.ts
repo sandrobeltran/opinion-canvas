@@ -21,17 +21,17 @@ export const locations = [
 
 export type Location = (typeof locations)[number];
 export const locationsDict: Record<Location, { label: string }> = {
-  "UNIVERSIDAD JAVERIANA - CENTRO JAVERIANO DE EMPRENDIMIENTO": {
-    label: "Centro Javeriano de Emprendimiento",
-  },
-  "CENTRO FELICIDAD - CEFE CHAPINERO": {
-    label: "CEFE Chapinero",
-  },
   "UNIVERSIDAD JAVERIANA - DESIGN FACTORY": {
     label: "Javeriana Design Factory",
   },
+  "UNIVERSIDAD JAVERIANA - CENTRO JAVERIANO DE EMPRENDIMIENTO": {
+    label: "Centro Javeriano de Emprendimiento",
+  },
   "UNIVERSIDAD JAVERIANA - LABORATORIOS": {
     label: "Laboratorios Javeriana",
+  },
+  "CENTRO FELICIDAD - CEFE CHAPINERO": {
+    label: "CEFE Chapinero",
   },
   "INVEST IN BOGOTÁ": {
     label: "Invest in Bogotá",
