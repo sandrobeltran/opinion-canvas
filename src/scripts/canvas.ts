@@ -13,6 +13,8 @@ let allOpinions: Opinion[] = [];
 let currentFilter: Location | "" = "";
 let loading = true;
 
+const postItColors = ["#70755E", "#965C39", "#743996", "#963F39", "#394C6C"];
+
 const container = document.getElementById("container") as HTMLElement;
 const canvas = document.getElementById("canvas") as HTMLElement;
 const recenterBtn = document.getElementById(
@@ -27,7 +29,8 @@ interface ViewState {
 
 let state: ViewState = { x: 0, y: 0, scale: 1 };
 const POST_IT_WIDTH = 350;
-const GAP = 65;
+const GAP_X = 65;
+const GAP_Y = 90;
 let contentWidth = 0;
 let contentHeight = 0;
 
@@ -80,7 +83,6 @@ if (locationFilter) {
 /** 1. Masonry Logic (Unchanged) **/
 function renderMasonry(dataToRender: Opinion[]): void {
   /* if (!container || opinions.length === 0) return; */
-  container.innerHTML = "";
 
   if (dataToRender.length === 0 && !loading) {
     container.innerHTML =
@@ -97,7 +99,7 @@ function renderMasonry(dataToRender: Opinion[]): void {
     const postIt = document.createElement("div");
     postIt.classList.add("post-it");
     postIt.innerHTML = `
-            <div class="background" style="background-image: url('/post-it/body-${randomBgIndex}.png')" >
+            <div class="background" style="background-image: url('/post-it/body-${randomBgIndex}.png');" >
               <img src="/post-it/top-${randomBgIndex}.png" class="top" />
               <img src="/post-it/bottom-${randomBgIndex}.png" class="bottom" />
             </div>
@@ -116,14 +118,15 @@ function renderMasonry(dataToRender: Opinion[]): void {
     container.appendChild(postIt);
     const shortestCol = colHeights.indexOf(Math.min(...colHeights));
     const random = Math.random();
-    const posX = shortestCol * (POST_IT_WIDTH + GAP) + (random * 10 - 5);
+    const posX = shortestCol * (POST_IT_WIDTH + GAP_X) + (random * 10 - 5);
     const posY = colHeights[shortestCol] + (random * 50 - 25);
     postIt.style.left = `${posX}px`;
     postIt.style.top = `${posY}px`;
     postIt.style.rotate = `${random * 6 - 3}deg`;
-    colHeights[shortestCol] += postIt.offsetHeight + GAP;
+    postIt.style.filter = `drop-shadow(0px 12px 12px ${postItColors[randomBgIndex - 1]}72)`;
+    colHeights[shortestCol] += postIt.offsetHeight + GAP_Y;
   });
-  contentWidth = columns * (POST_IT_WIDTH + GAP) - GAP;
+  contentWidth = columns * (POST_IT_WIDTH + GAP_X) - GAP_X;
   contentHeight = Math.max(...colHeights);
 }
 
@@ -260,7 +263,7 @@ function initPointerEvents() {
 interact("#canvas").draggable({
   inertia: {
     resistance: 5, // Higher = stops faster
-    minSpeed: 100, // Minimum speed to trigger inertia
+    minSpeed: 150, // Minimum speed to trigger inertia
     endSpeed: 10, // Speed at which it stops completely
   },
   listeners: {

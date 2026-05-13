@@ -6,17 +6,19 @@ import { careers, locations } from "@/types/opinion.types";
 ---
 
 <Layout title="New Opinion">
-  <main class="flex flex-col gap-5 px-5 py-5 min-h-dvh">
-    <header class="w-full flex gap-5">
-      <a
-        href="/"
-        class="px-3 py-2 bg-secondary/20 text-secondary font-semibold text-lg"
-        >← Volver al tablero</a
-      >
-    </header>
+  <main class="flex flex-col min-h-dvh items-center">
+    <div class="flex flex-col gap-5 px-5 py-5 w-full max-w-xl">
+      <header class="w-full flex gap-5">
+        <a
+          href="/"
+          class="px-3 py-2 bg-secondary/20 text-secondary font-semibold text-lg"
+          >← Volver al tablero</a
+        >
+      </header>
 
-    <h2 class="text-2xl font-bold">Añade una nota</h2>
+      <h2 class="text-2xl font-bold text-left">Añade una nota</h2>
 
-    <NewOpinion client:only />
+      <NewOpinion client:only />
+    </div>
   </main>
 </Layout>
