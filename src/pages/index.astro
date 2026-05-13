@@ -1,0 +1,33 @@
+---
+import "../styles/canvas.css";
+import Layout from "@/layouts/Layout.astro";
+import HomeNavbar from "@/components/HomeNavbar";
+import "@/styles/canvas.css";
+import Spinner from "@/components/Spinner";
+---
+
+<Layout>
+  <div class="w-full h-dvh flex flex-col">
+    <p id="debugText">Debug:</p>
+    <!-- <div class="background-pattern pointer-events-none"></div> -->
+    <div id="canvas" class="touch-none w-full flex-1">
+      <div id="container">
+        <div
+          class="fixed m-auto inset-0 w-full h-full z-50 grid place-content-center"
+        >
+          <Spinner />
+        </div>
+      </div>
+    </div>
+
+    <HomeNavbar client:visible />
+  </div>
+
+  <!-- <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"
+  ></script> -->
+  <!-- <script src="../scripts/canvas.js"></script> -->
+
+  <script>
+    import "../scripts/canvas.ts";
+  </script>
+</Layout>

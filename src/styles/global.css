@@ -1,0 +1,20 @@
+@layer theme, base, components, utilities;
+
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #70755e;
+  --color-cream: #eed4bb;
+  --color-secondary: #c3835d;
+  --color-light: #f7f7f7;
+  --color-dark: #121212;
+  --color-muted: #6c6c6c;
+}
+
+@utility shadow-primary {
+  box-shadow: -4px 4px 0px #383b2b;
+}
+
+button {
+  cursor: pointer;
+}
