@@ -21,8 +21,8 @@ const NewOpinion = () => {
   const [data, setData] = useState<Omit<Opinion, "id" | "createdAt">>({
     email: "",
     type: "CITY",
-    career: "SOFTWARE_ENGINEERING",
-    location: "BIBLIOSEO - BIBLIOTECA DE LA CREATIVIDAD",
+    career: "MULTIMEDIA_ENGINEERING",
+    location: locations[0],
     text: "",
   });
   const [loading, setLoading] = useState<boolean>(false);
@@ -56,7 +56,7 @@ const NewOpinion = () => {
   return (
     <form onSubmit={handleSubmit} className="flex-1 flex flex-col gap-4">
       <div className="flex flex-col gap-1">
-        <p className="text-lg font-medium">Opinión para</p>
+        <p className="text-lg font-medium">Opinión para la</p>
         <div className={"w-full border border-muted p-1 flex relative"}>
           <span
             style={{

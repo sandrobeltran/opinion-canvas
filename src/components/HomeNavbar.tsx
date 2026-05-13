@@ -43,7 +43,7 @@ const HomeNavbar = () => {
           href="/opinar"
           className="w-fit px-3 py-3 bg-primary text-light font-semibold flex items-center gap-1"
         >
-          Postear nueva opinión
+          Opinar
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"

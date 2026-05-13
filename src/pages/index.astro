@@ -10,10 +10,73 @@ import Spinner from "@/components/Spinner";
   <div class="w-full h-dvh flex flex-col">
     <!-- <div class="background-pattern pointer-events-none"></div> -->
     <header class="w-full fixed top-0 left-0 z-50">
-      <nav class="py-4 px-4 bg-white border-primary/20 border w-fit">
+      <nav
+        class="py-4 px-4 bg-white border-primary/20 border w-fit flex items-start flex-col gap-2"
+      >
         <img src="/logos-macondo.png" alt="Logos Macondo Lab" class="h-8" />
+
+        <p class="text-sm text-muted">
+          Desarrollado por
+          <a
+            href="https://sandrobeltran.com"
+            class="font-medium text-primary underline"
+            target="_blank">Sandro Beltrán</a
+          >
+        </p>
       </nav>
     </header>
+    <div
+      id="emptyState"
+      class="fixed hidden m-auto bg-primary/10 border border-primary/20 p-2 inset-0 z-50 h-fit flex-col items-center gap-5 w-full max-w-3xs"
+    >
+      <div class="flex flex-col items-center gap-1">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="48"
+          height="48"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-mood-empty text-primary"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+          <path d="M9 10l.01 0"></path>
+          <path d="M15 10l.01 0"></path>
+          <path d="M9 15l6 0"></path>
+        </svg>
+        <h4
+          class="text-center text-lg text-primary font-semibold leading-tight text-balance"
+        >
+          No hay opiniones para mostrar
+        </h4>
+      </div>
+      <a
+        href="/opinar"
+        class="w-fit px-2.5 py-2 bg-primary text-light font-semibold flex items-center gap-1"
+      >
+        Crear la primera
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-plus"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M12 5l0 14"></path>
+          <path d="M5 12l14 0"></path>
+        </svg>
+      </a>
+    </div>
 
     <div id="canvas" class="touch-none w-full flex-1">
       <div id="container">

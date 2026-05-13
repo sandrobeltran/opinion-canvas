@@ -51,22 +51,39 @@ export const locationsDict: Record<Location, { label: string }> = {
 };
 
 export const careers = [
-  "CIVIL_ENGINEERING",
-  "SYSTEMS_ENGINEERING",
-  "INDUSTRIAL_ENGINEERING",
-  "ELECTRONIC_ENGINEERING",
-  "MECHANICAL_ENGINEERING",
-  "SOFTWARE_ENGINEERING",
+  "MULTIMEDIA_ENGINEERING",
+  "MARKETING",
+  "SOCIAL_WORK",
+  "SOCIAL_INTERVENTION_SPECIALIZATION",
+  "MBA_INNOVATION",
+  "HEALTH_QUALITY_AUDIT_MASTERS",
+  "MACONDOLAB_INNPRENDE",
 ] as const;
 
 export type Career = (typeof careers)[number];
 export const careersDict: Record<Career, { label: string }> = {
-  CIVIL_ENGINEERING: { label: "Ingeniería Civil" },
-  SYSTEMS_ENGINEERING: { label: "Ingeniería de Sistemas" },
-  INDUSTRIAL_ENGINEERING: { label: "Ingeniería Industrial" },
-  ELECTRONIC_ENGINEERING: { label: "Ingeniería Electrónica" },
-  MECHANICAL_ENGINEERING: { label: "Ingeniería Mecánica" },
-  SOFTWARE_ENGINEERING: { label: "Ingeniería de Software" },
+  MULTIMEDIA_ENGINEERING: {
+    label: "Ingeniería Multimedia",
+  },
+  MARKETING: {
+    label: "Marketing",
+  },
+  SOCIAL_WORK: {
+    label: "Trabajo Social",
+  },
+  SOCIAL_INTERVENTION_SPECIALIZATION: {
+    label: "Especialización en Procesos de Intervención Social",
+  },
+  MBA_INNOVATION: {
+    label: "Maestría en Administración de Empresas e Innovación",
+  },
+  HEALTH_QUALITY_AUDIT_MASTERS: {
+    label:
+      "Maestría en Auditoría y Sistemas de la Calidad en Servicios de Salud",
+  },
+  MACONDOLAB_INNPRENDE: {
+    label: "MacondoLab - Cátedra Innprende",
+  },
 };
 
 export interface Opinion {

@@ -47,6 +47,16 @@ html {
   cursor: grabbing;
 }
 
+.no-data {
+  width: 100%;
+  height: 100%;
+  display:grid;
+  place-content: center;
+  position: fixed;
+  inset: 0;
+  margin: 0;
+}
+
 .post-it {
   min-height: 200px;
   font-family: sans-serif, cursive, sans-serif;

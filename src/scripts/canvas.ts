@@ -16,6 +16,7 @@ let loading = true;
 const postItColors = ["#70755E", "#965C39", "#743996", "#963F39", "#394C6C"];
 
 const container = document.getElementById("container") as HTMLElement;
+const emptyState = document.getElementById("emptyState") as HTMLElement;
 const canvas = document.getElementById("canvas") as HTMLElement;
 const recenterBtn = document.getElementById(
   "recenter-btn",
@@ -53,6 +54,8 @@ onValue(opinionsRef, (snapshot) => {
 
     // Only recenter on first load or big data changes
     recenter();
+  } else {
+    filterAndRender();
   }
 });
 
@@ -82,16 +85,16 @@ if (locationFilter) {
 
 /** 1. Masonry Logic (Unchanged) **/
 function renderMasonry(dataToRender: Opinion[]): void {
-  /* if (!container || opinions.length === 0) return; */
   if (!loading) {
     container.innerHTML = "";
+
+    if (dataToRender.length === 0) {
+      emptyState.style.display = "flex";
+      return;
+    }
   }
 
-  if (dataToRender.length === 0 && !loading) {
-    container.innerHTML =
-      "<p class='no-data'>No hay opiniones en este lugar todavía.</p>";
-    return;
-  }
+  emptyState.style.display = "none";
 
   const columns = Math.min(dataToRender.length, 4);
   const colHeights: number[] = new Array(columns).fill(0);
