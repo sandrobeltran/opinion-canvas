@@ -83,6 +83,9 @@ if (locationFilter) {
 /** 1. Masonry Logic (Unchanged) **/
 function renderMasonry(dataToRender: Opinion[]): void {
   /* if (!container || opinions.length === 0) return; */
+  if (!loading) {
+    container.innerHTML = "";
+  }
 
   if (dataToRender.length === 0 && !loading) {
     container.innerHTML =

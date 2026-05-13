@@ -15,7 +15,7 @@ import CustomSelect from "./forms/CustomSelect";
 import { OpinionService } from "@/services/OpinionService";
 import Spinner from "./Spinner";
 
-interface Props {}
+const TEXT_MAX_LENGTH = 900;
 
 const NewOpinion = () => {
   const [data, setData] = useState<Omit<Opinion, "id" | "createdAt">>({
@@ -119,12 +119,12 @@ const NewOpinion = () => {
           rows={4}
           required
           minLength={3}
-          maxLength={600}
+          maxLength={TEXT_MAX_LENGTH}
           value={data.text}
           onChange={(e) => setData((s) => ({ ...s, text: e.target.value }))}
         />
         <span className="text-sm text-right text-muted w-full">
-          {data.text.length}/400
+          {data.text.length}/{TEXT_MAX_LENGTH}
         </span>
       </label>
 
